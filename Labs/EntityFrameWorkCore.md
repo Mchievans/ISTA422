@@ -89,6 +89,9 @@ namespace EntityFrameWorkDataAccessApproach
     }
 }
 
+------
+
+------- 
 
 namespace EntityFrameWorkDataAccessApproach
 {
@@ -146,3 +149,16 @@ namespace EntityFrameWorkDataAccessApproach
 -----
 
 7. Next we add in the startup file add make changes to the Config
+
+ public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddMvc();
+
+        services.AddDbContext<BoxContext>
+                (options => options.UseSqlServer(connection));
+
+    }
+
+---------
+
+8. Add the connection string 
